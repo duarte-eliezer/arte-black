@@ -47,7 +47,10 @@ async function verificarAdministrador() {
 // VERIFICAR SESSÃO
 async function verificarSessao() {
     const { data, error } = await supabase.auth.getSession();
-
+    
+console.log("Resultado is_admin:", data);
+console.log("Erro is_admin:", error);
+    
     if (error || !data.session) {
         mostrarLogin();
         return;
